@@ -1,0 +1,17 @@
+#MyEclipse Hibernate Properties
+#Sun Jul 30 08:55:46 CST 2017
+genVersionTag=false
+sessionFactoryName=com.lyw.dao.HibernateSessionFactory
+genAnnotations=false
+configFile=/project_KPI/src/hibernate.cfg.xml
+reStrategyClass=
+sessionFactoryId=
+profile=
+detectM2M=false
+genBasicCompId=false
+keyGenerator=
+createConfigFile=true
+basePersistenceClass=
+detectO2O=false
+useJavaTypes=true
+reSettingsFile=

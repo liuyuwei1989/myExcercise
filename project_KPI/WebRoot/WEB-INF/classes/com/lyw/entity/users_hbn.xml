@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.lyw.entity.Users" table="employee">
+	<id name="id" column="id">
+		<generator class="native"></generator>
+	</id>
+	<property name="name" column="name"></property>
+	<property name="email" column="email"></property>
+	<property name="sex" column="sex"></property>
+	<property name="birth" column="birthday"></property>
+	<property name="photo" column="photo"></property>
+	<property name="addTime" column="addTime"></property>
+	<many-to-one name="depart" column="departId" class="com.lyw.entity.Depart" lazy="false"></many-to-one>
+</class>
+</hibernate-mapping>

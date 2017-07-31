@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+<bean id="a4" class="com.lyw.impl.A4">
+	<!-- <constructor-arg ref="a3" index="0"></constructor-arg>
+	<constructor-arg value="a3" index="1"></constructor-arg> -->
+	<!-- <constructor-arg ref="a3" type="com.lyw.inface.Paper"></constructor-arg>
+	<constructor-arg value="123" type="java.lang.String"></constructor-arg> -->
+	<!-- <constructor-arg ref="a3" name="a3"></constructor-arg>
+	<constructor-arg value="123123123" name="str"></constructor-arg> -->
+	<constructor-arg ref="a3"></constructor-arg>
+	<constructor-arg value="12312321312321saffew123"></constructor-arg>
+</bean>
+<bean id="a3" class="com.lyw.impl.A3"></bean>
+<bean id="colorFul" class="com.lyw.impl.ColorFul"></bean>
+<bean id="grey" class="com.lyw.impl.Grey">
+	<property name="array">
+		<array>
+			<value>array001</value>
+			<value>array002</value>
+			<ref bean="colorFul" />
+		</array>
+	</property>
+	<property name="list">
+		<list>
+			<value>list--1</value>
+			<value>list--2</value>
+			<ref bean="colorFul"/>
+		</list>
+	</property>
+	<property name="set">
+		<set>
+			<value>1</value>
+			<value>2</value>
+			<ref bean="colorFul"/>
+		</set>
+	</property>
+	<property name="map">
+		<map>
+			<entry key-ref="colorFul">
+				<value>map-value-1</value>
+			</entry>
+			<entry key="map--key--2">
+				<ref bean="colorFul"/>
+			</entry>
+			<entry key="map-key-3">
+				<value>map-value-3</value>
+			</entry>
+		</map>
+	</property>
+</bean>
+<bean id="printer" class="com.lyw.printer.Printer">
+	<property name="paper" ref="a4"></property>
+	<property name="color" ref="grey"></property>
+</bean>
+</beans>

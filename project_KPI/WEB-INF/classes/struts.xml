@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 支持动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="true" />
+	<!-- 配置编码格式 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 修改xml后不用重启tomcat -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<package name="default" namespace="/" extends="struts-default">
+		<action name='User_*' class="com.lyw.action.UserAction" method="{1}">
+			<result name="showAll">showAllUser.jsp</result>
+			<result name="addUser">addUser.jsp</result>
+			<result name="manage">userManage.jsp</result>
+			<result name="insert">success.jsp</result>
+			<result name="modify">modifyUser.jsp</result>
+			<result name="update">success.jsp</result>
+		</action>
+		<action name="Depart_*" class="com.lyw.action.DepartAction" method="{1}">
+			<result name="showAll">showAllDepart.jsp</result>
+			<result name="manage">departManage.jsp</result>
+		</action>
+	</package>
+</struts>    

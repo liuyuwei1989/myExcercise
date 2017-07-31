@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.bwf.entity.Users" table="users" >
+		<id name="name" column="uname">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="pwd" column="password"></property>
+		<property name="age" column="age"></property>
+		<property name="email"></property>
+		<property name="sex"></property>
+		<many-to-one name="depart" class="com.bwf.entity.Depart" column="departId" lazy="false" fetch="join" ></many-to-one>
+	</class>
+</hibernate-mapping>

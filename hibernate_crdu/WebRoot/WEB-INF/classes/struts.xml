@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 支持动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="true" />
+	<!-- 配置编码格式 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 修改后缀名 -->
+	<constant name="struts.action.extension" value="action,,bwf" />
+	<!-- 修改xml后不用重启tomcat -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="users_*" class="com.bwf.action.UserAction" method="{1}">
+			<result name="showAll" type="chain">users_selectAll</result>
+			<result name="show">/showAll.jsp</result>
+			<result name="update">update.jsp</result>
+		</action>
+		
+		<action name="index" class="com.bwf.action.DepartAction" method="selectAll">
+			<result name="allDepart">index.jsp</result>
+		</action>
+	</package>
+</struts>    
